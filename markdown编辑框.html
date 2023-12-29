@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑框</title>
+</head>
+<link rel="stylesheet" href="editor-md/css/editormd.min.css">
+
+<style>
+    
+    .content{
+        width: 1000px;
+        height: 800px;
+        margin: auto;
+        border: 1px solid black;
+    }
+    #editor{
+        min-height: 800px;
+    }
+</style>
+<body>
+    <div class="content">
+        <div id="editor">
+            
+        </div>
+    </div>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="editor-md/editormd.min.js"></script>
+   
+    <script>
+        
+        var upload_url = "";
+
+        $(function() {
+            initEdtorMd();
+        });
+
+        function initEdtorMd() {
+            editormd('editor',{
+                placeholder: "请输入内容",
+                height: 500,
+                path: "editor-md/lib/",
+                // 允许本地上传图片
+                imageUpload:true,
+                // 上传的文件格式
+                imageFormats:["jpg","jpeg","png","gif"],
+                // 上传的地址
+                imageUploadURL:upload_url,
+            })
+        }
+
+
+    </script>
+
+</body>
+</html>
